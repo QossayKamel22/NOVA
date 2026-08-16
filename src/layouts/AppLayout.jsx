@@ -1,15 +1,15 @@
-import { Outlet, useMatches } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import MobileNav from './MobileNav'
 import Topbar from './Topbar'
 import { useQuickAdd } from '../context/QuickAddContext'
+import { PAGE_META } from '../constants/pageMeta'
 import styles from './AppLayout.module.css'
 
 export default function AppLayout() {
-  const matches = useMatches()
+  const location = useLocation()
   const { openQuickAdd } = useQuickAdd()
-  const current = matches[matches.length - 1]
-  const { title, subtitle } = current?.handle || {}
+  const { title, subtitle } = PAGE_META[location.pathname] || {}
 
   return (
     <div className={styles.shell}>

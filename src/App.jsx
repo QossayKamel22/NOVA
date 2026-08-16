@@ -40,13 +40,13 @@ export default function App() {
 
           <Route element={<Protected />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/tasks" element={<Tasks />} handle={{ title: 'Tasks', subtitle: 'Stay on top of your tasks and get things done.' }} />
-            <Route path="/goals" element={<Goals />} handle={{ title: 'Goals', subtitle: 'Track your progress and achieve more.' }} />
-            <Route path="/notes" element={<Notes />} handle={{ title: 'Notes', subtitle: 'Capture ideas and important information.' }} />
-            <Route path="/calendar" element={<Calendar />} handle={{ title: 'Calendar', subtitle: 'Plan your schedule and never miss a deadline.' }} />
-            <Route path="/insights" element={<Insights />} handle={{ title: 'Insights', subtitle: 'Deep insights into your productivity and progress.' }} />
-            <Route path="/profile" element={<Profile />} handle={{ title: 'Profile', subtitle: 'Your account at a glance.' }} />
-            <Route path="/settings" element={<Settings />} handle={{ title: 'Settings', subtitle: 'Manage your account and preferences.' }} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/goals" element={<Goals />} />
+            <Route path="/notes" element={<Notes />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
