@@ -17,6 +17,6 @@ export const firebaseConfigured = Boolean(
 
 const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig)
 
-export const auth = getAuth(app)
-export const db = getFirestore(app)
+export const auth = firebaseConfigured ? getAuth(app) : null
+export const db = firebaseConfigured ? getFirestore(app) : null
 export default app
