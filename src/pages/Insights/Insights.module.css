@@ -4,6 +4,7 @@
 .statRow { display: flex; align-items: baseline; gap: 8px; }
 .statValue { font-size: 24px; font-weight: 800; }
 .statDelta { font-size: 12px; font-weight: 700; color: var(--green); }
+.statDeltaWarn { color: var(--red); }
 
 .chartGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
 .chartCard { display: flex; flex-direction: column; gap: var(--space-2); }

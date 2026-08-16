@@ -10,6 +10,7 @@ import { IconTasks, IconGoals, IconNotes, IconInsights, IconCheck } from '../../
 import { useAuth } from '../../context/AuthContext'
 import { useQuickAdd } from '../../context/QuickAddContext'
 import { useFirestoreCollection } from '../../hooks/useFirestoreCollection'
+import { computeInsights } from '../../hooks/useInsightsData'
 import { updateItem } from '../../firebase/firestore'
 import { WeeklyTrendChart } from '../../features/insights/Charts'
 import styles from './Dashboard.module.css'
@@ -27,17 +28,15 @@ export default function Dashboard() {
   const { items: notes, loading: notesLoading } = useFirestoreCollection('notes')
 
   const todayTasks = useMemo(() => tasks.filter((t) => !t.completed).slice(0, 4), [tasks])
-  const completedCount = useMemo(() => tasks.filter((t) => t.completed).length, [tasks])
   const activeGoals = useMemo(() => goals.filter((g) => g.status !== 'Archived').slice(0, 3), [goals])
   const recentNotes = useMemo(() => notes.slice(0, 3), [notes])
-
-  const productivity = tasks.length ? Math.round((completedCount / tasks.length) * 100) : 78
+  const insights = useMemo(() => computeInsights(tasks, goals), [tasks, goals])
 
   const stats = [
     { label: 'Tasks', value: tasks.length || 0, sub: 'Today', icon: IconTasks, tone: 'blue' },
     { label: 'Goals', value: goals.filter((g) => g.status === 'Active').length, sub: 'In progress', icon: IconGoals, tone: 'accent' },
     { label: 'Notes', value: notes.length, sub: 'New notes', icon: IconNotes, tone: 'green' },
-    { label: 'Productivity', value: `${productivity}%`, sub: 'This week', icon: IconInsights, tone: 'orange' },
+    { label: 'Productivity', value: `${insights.completionRate}%`, sub: 'This week', icon: IconInsights, tone: 'orange' },
   ]
 
   const toggleTask = async (task) => {
@@ -150,15 +149,26 @@ export default function Dashboard() {
         </Card>
 
         <Card className={`${styles.section} ${styles.insightsCard}`}>
-          <div className={styles.sectionHeader}><h3>Insights</h3></div>
-          <div className={styles.insightStats}>
-            <div><span className={styles.insightValue}>{completedCount || 24}</span><span className={styles.insightLabel}>Tasks Completed</span></div>
-            <div><span className={styles.insightValue}>18h 42m</span><span className={styles.insightLabel}>Focus Time</span></div>
-            <div><span className={styles.insightValue}>{productivity}%</span><span className={styles.insightLabel}>Productivity</span></div>
+          <div className={styles.sectionHeader}>
+            <h3>Insights</h3>
+            <Link to="/insights" className={styles.viewAll}>View all</Link>
           </div>
-          <div className={styles.chartWrap}>
-            <WeeklyTrendChart />
-          </div>
+          {tasksLoading || goalsLoading ? (
+            <div className={styles.skeletonList}><Skeleton height={140} radius={12} /></div>
+          ) : !insights.hasData ? (
+            <EmptyState title="No insights yet." description="Create tasks and goals to see your productivity trends here." />
+          ) : (
+            <>
+              <div className={styles.insightStats}>
+                <div><span className={styles.insightValue}>{insights.completedTasks}</span><span className={styles.insightLabel}>Tasks Completed</span></div>
+                <div><span className={styles.insightValue}>{insights.completionRate}%</span><span className={styles.insightLabel}>Completion Rate</span></div>
+                <div><span className={styles.insightValue}>{insights.goalsProgress}%</span><span className={styles.insightLabel}>Goals Progress</span></div>
+              </div>
+              <div className={styles.chartWrap}>
+                <WeeklyTrendChart data={insights.weeklyTrend} />
+              </div>
+            </>
+          )}
         </Card>
       </div>
     </div>
