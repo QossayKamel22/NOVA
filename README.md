@@ -133,6 +133,20 @@ firebase deploy --only hosting
 - Offline support via Firestore persistence
 - Team/shared workspaces
 
+
+##Screenshots
+
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/6c945dbb-df17-448c-975e-d4373731c0a0" /> 
+
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/9dd78996-3882-40ec-9145-a7d34b465634" />
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/02fc6e07-b8fd-4992-921c-718a38892c62" />
+
+
+
+
+
 ## Credits
 
 Designed and built for **Qossay Kamel**. Visual direction inspired by Apple, Linear, and Notion — implemented as an original design system, not a copy of any existing product.
