@@ -1,5 +1,9 @@
 # NOVA
 
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/c2075e2f-f9b9-42db-86ee-9a854d780329" />
+
+
+
 **Your Day. Organized.**
 
 NOVA is a premium personal productivity command center for managing tasks, goals, notes, a calendar, and productivity insights — all in one calm, minimal workspace. Built with React, Vite, and Firebase.
