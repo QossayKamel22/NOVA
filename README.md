@@ -134,9 +134,10 @@ firebase deploy --only hosting
 - Team/shared workspaces
 
 
-##Screenshots
+## Screenshots
 
 <img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/6c945dbb-df17-448c-975e-d4373731c0a0" /> 
+
 
 <img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/9dd78996-3882-40ec-9145-a7d34b465634" />
 
