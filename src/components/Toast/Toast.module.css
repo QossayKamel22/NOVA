@@ -1,0 +1,40 @@
+.viewport {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 360px;
+}
+
+.toast {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.toast.error { background: #7A1F2B; }
+.toast.success { background: #14532D; }
+
+.close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+.close:hover { color: #fff; }
+
+@media (max-width: 767px) {
+  .viewport { left: var(--space-2); right: var(--space-2); bottom: 84px; max-width: none; }
+}

@@ -1,0 +1,58 @@
+.controls { display: flex; gap: var(--space-1); margin-bottom: var(--space-2); flex-wrap: wrap; }
+.searchInput { flex: 1; min-width: 200px; }
+
+.categories { display: flex; gap: 8px; margin-bottom: var(--space-3); flex-wrap: wrap; }
+.chip {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.chipActive { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+
+.noteCard {
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.noteCard:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.note_blue { background: rgba(59,130,246,0.06); }
+.note_green { background: rgba(34,197,94,0.06); }
+.note_yellow { background: rgba(245,158,11,0.06); }
+.note_purple { background: rgba(99,102,241,0.06); }
+
+.noteTop { display: flex; justify-content: space-between; align-items: flex-start; }
+.noteTitle { font-size: 15px; }
+.noteContent { font-size: 13px; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+
+.noteFooter { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary); }
+.noteCategory { font-weight: 600; }
+
+.menuWrap { position: relative; }
+.moreBtn { width: 28px; height: 28px; border-radius: 8px; background: none; border: none; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; }
+.moreBtn:hover { background: rgba(17,17,17,0.08); }
+.menu {
+  position: absolute; right: 0; top: 32px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md); z-index: 10; min-width: 130px; overflow: hidden;
+}
+.menu button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 12px; background: none; border: none; font-size: 13px; color: var(--text); text-align: left; }
+.menu button:hover { background: rgba(255,255,255,0.5); }
+.menuDanger { color: var(--red); }
+
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}

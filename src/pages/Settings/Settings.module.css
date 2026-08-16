@@ -1,0 +1,45 @@
+.tabs { display: flex; gap: 6px; margin-bottom: var(--space-3); border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tab { padding: 10px 4px; margin-right: var(--space-3); background: none; border: none; border-bottom: 2px solid transparent; font-size: 14px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+.tabActive { color: var(--accent); border-color: var(--accent); }
+
+.form { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-2); }
+
+.avatarRow { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-1); }
+.avatarName { font-size: 16px; font-weight: 700; }
+.avatarEmail { font-size: 13px; color: var(--text-secondary); }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 13px; font-weight: 600; }
+
+.select, .textarea {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.themeRow { display: flex; gap: 8px; }
+.themeChip { padding: 9px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: var(--surface); font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.themeChipActive { border-color: var(--accent); color: var(--accent); background: rgba(79,70,255,0.06); }
+
+.switchRow { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
+.switchRow input { accent-color: var(--accent); width: 16px; height: 16px; }
+
+.actions { display: flex; justify-content: flex-end; }
+
+.hintText { font-size: 13px; }
+
+.planBox { padding: var(--space-2); border-radius: var(--radius-md); background: rgba(79,70,255,0.06); }
+
+.dangerZone {
+  border: 1px solid rgba(239,68,68,0.3);
+  background: rgba(239,68,68,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dangerTitle { font-size: 15px; color: var(--red); }
+.confirmRow { display: flex; gap: 10px; }

@@ -1,0 +1,16 @@
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); margin-bottom: var(--space-2); }
+.statCard { display: flex; flex-direction: column; gap: 8px; }
+.statLabel { font-size: 13px; color: var(--text-secondary); font-weight: 600; }
+.statRow { display: flex; align-items: baseline; gap: 8px; }
+.statValue { font-size: 24px; font-weight: 800; }
+.statDelta { font-size: 12px; font-weight: 700; color: var(--green); }
+
+.chartGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+.chartCard { display: flex; flex-direction: column; gap: var(--space-2); }
+.chartTitle { font-size: 15px; }
+.chartBox { height: 240px; }
+
+@media (max-width: 1023px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .chartGrid { grid-template-columns: 1fr; }
+}

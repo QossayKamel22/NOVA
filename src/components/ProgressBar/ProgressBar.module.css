@@ -1,0 +1,42 @@
+.wrap { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.value { font-weight: 600; color: var(--text); }
+
+.track {
+  width: 100%;
+  background: rgba(17,17,17,0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.sm { height: 5px; }
+.md { height: 8px; }
+.lg { height: 10px; }
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 500ms var(--ease);
+}
+.accent { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.green { background: var(--green); }
+.orange { background: var(--orange); }
+.blue { background: var(--blue); }
+
+.circleWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.circleLabel {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
