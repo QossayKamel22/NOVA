@@ -3,9 +3,12 @@
 
 <img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/c2075e2f-f9b9-42db-86ee-9a854d780329" />
 
-
+---
 
 NOVA is a premium personal productivity command center for managing tasks, goals, notes, a calendar, and productivity insights — all in one calm, minimal workspace. Built with React, Vite, and Firebase.
+
+---
+
 
 ## Description
 
@@ -138,13 +141,15 @@ firebase deploy --only hosting
 
 <img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/6c945dbb-df17-448c-975e-d4373731c0a0" /> 
 
+---
 
 <img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/9dd78996-3882-40ec-9145-a7d34b465634" />
 
+---
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/02fc6e07-b8fd-4992-921c-718a38892c62" />
 
-
+---
 
 
 
